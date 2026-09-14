@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f4f1ea;
+  --color-charcoal: #1c1917;
+  --color-ink: #6f6a64;
+  --color-burgundy: #8f3a42;
+  --color-burgundy-deep: #6e2c34;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
