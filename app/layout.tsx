@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col antialiased`}>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
