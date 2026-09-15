@@ -19,7 +19,7 @@ export default function Home() {
             <h1
               className={`${instrumentSerif.className} max-w-[840px] text-[60px] leading-[0.96] tracking-[-0.04em] text-charcoal sm:text-[80px] lg:text-[96px]`}
             >
-              Build a more intelligent legal practice.
+              The next generation of legal work
             </h1>
 
             <div className="max-w-[400px] lg:pb-1">
