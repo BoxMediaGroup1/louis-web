@@ -1,80 +1,38 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 const TEXT = "The next generation of legal work";
+const CHAR_MS = 34;
+const SPACE_MS = 52;
+
+function characterDelays(text: string) {
+  const delays: number[] = [];
+  let time = 0;
+
+  for (const char of text) {
+    delays.push(time);
+    time += char === " " ? SPACE_MS : CHAR_MS;
+  }
+
+  return delays;
+}
 
 export function HeroHeadline({ className }: { className?: string }) {
-  const [count, setCount] = useState(0);
-  const [phase, setPhase] = useState<"typing" | "idle" | "static">("typing");
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches) {
-      setCount(TEXT.length);
-      setPhase("static");
-      return;
-    }
-
-    const startDelay = 280;
-    const duration = 2600;
-    const weights = Array.from(TEXT, (char) => (char === " " ? 1.65 : 1));
-    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
-    let raf = 0;
-    let start: number | null = null;
-
-    const tick = (now: number) => {
-      if (start === null) {
-        start = now;
-      }
-
-      const elapsed = now - start - startDelay;
-      if (elapsed < 0) {
-        raf = window.requestAnimationFrame(tick);
-        return;
-      }
-
-      const progress = Math.min(1, elapsed / duration);
-      const target = progress * totalWeight;
-      let consumed = 0;
-      let nextCount = 0;
-      for (const weight of weights) {
-        consumed += weight;
-        if (consumed <= target) {
-          nextCount += 1;
-        } else {
-          break;
-        }
-      }
-
-      setCount(Math.min(TEXT.length, nextCount));
-
-      if (progress < 1) {
-        raf = window.requestAnimationFrame(tick);
-        return;
-      }
-
-      setCount(TEXT.length);
-      setPhase("idle");
-    };
-
-    raf = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(raf);
-  }, []);
+  const delays = characterDelays(TEXT);
 
   return (
-    <h1 className={`grid ${className}`} aria-label={TEXT}>
-      <span className="invisible col-start-1 row-start-1" aria-hidden="true">
-        {TEXT}
-      </span>
-      <span className="col-start-1 row-start-1" aria-hidden="true">
-        {TEXT.slice(0, count)}
-        {phase !== "static" ? (
+    <h1 className={className} aria-label={TEXT}>
+      {TEXT.split("").map((char, index) => {
+        const isLast = index === TEXT.length - 1;
+
+        return (
           <span
-            className={`hero-caret ${phase === "idle" ? "hero-caret-idle" : ""}`}
-          />
-        ) : null}
-      </span>
+            key={`${char}-${index}`}
+            className={`hero-type-char${isLast ? " hero-type-char-last" : ""}`}
+            style={{ animationDelay: `${delays[index]}ms` }}
+            aria-hidden="true"
+          >
+            {char}
+          </span>
+        );
+      })}
     </h1>
   );
 }

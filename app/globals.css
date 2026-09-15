@@ -19,19 +19,45 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.hero-caret {
-  display: inline-block;
-  width: 0.045em;
-  height: 0.78em;
-  margin-left: 0.07em;
-  vertical-align: 0.02em;
-  background: currentColor;
-  border-radius: 1px;
-  transform-origin: center;
+.hero-type-char {
+  position: relative;
+  visibility: hidden;
+  animation: hero-type-show 1ms linear forwards;
 }
 
-.hero-caret-idle {
+.hero-type-char::after {
+  content: "";
+  position: absolute;
+  top: 0.14em;
+  right: -0.07em;
+  width: 0.045em;
+  height: 0.78em;
+  background: currentColor;
+  border-radius: 1px;
+  opacity: 0;
+  animation: hero-caret-step 72ms linear;
+  animation-delay: inherit;
+}
+
+.hero-type-char-last::after {
   animation: hero-caret-idle 3.2s ease-in-out forwards;
+  animation-delay: inherit;
+}
+
+@keyframes hero-type-show {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes hero-caret-step {
+  0%,
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes hero-caret-idle {
@@ -57,10 +83,16 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-caret,
-  .hero-caret-idle {
+  .hero-type-char,
+  .hero-type-char-last {
+    visibility: visible;
     animation: none;
+  }
+
+  .hero-type-char::after,
+  .hero-type-char-last::after {
     display: none;
+    animation: none;
   }
 }
 
