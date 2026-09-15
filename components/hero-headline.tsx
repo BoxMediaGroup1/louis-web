@@ -1,6 +1,6 @@
 const TEXT = "The next generation of legal work";
-const CHAR_MS = 34;
-const SPACE_MS = 52;
+const CHAR_MS = 56;
+const SPACE_MS = 90;
 
 function characterDelays(text: string) {
   const delays: number[] = [];

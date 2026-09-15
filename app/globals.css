@@ -35,7 +35,7 @@ body {
   background: currentColor;
   border-radius: 1px;
   opacity: 0;
-  animation: hero-caret-step 72ms linear;
+  animation: hero-caret-step 110ms linear;
   animation-delay: inherit;
 }
 
