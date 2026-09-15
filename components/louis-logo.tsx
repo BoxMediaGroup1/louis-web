@@ -1,25 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const sizes = {
+  header: { height: 22, width: 80 },
+  footer: { height: 24, width: 88 },
+} as const;
+
 export function LouisLogo({
   className,
-  imageClassName = "h-7 w-auto sm:h-8",
+  size = "header",
 }: {
   className?: string;
-  imageClassName?: string;
+  size?: keyof typeof sizes;
 }) {
+  const { width, height } = sizes[size];
+
   return (
     <Link
       href="/"
       aria-label="Louis home"
-      className={`inline-flex items-center ${className ?? ""}`}
+      className={`inline-flex shrink-0 items-center ${className ?? ""}`}
     >
       <Image
         src="/louis-logo.png"
         alt="Louis"
-        width={635}
-        height={174}
-        className={imageClassName}
+        width={width}
+        height={height}
+        className="object-contain object-left"
+        style={{ width, height }}
         priority
       />
     </Link>

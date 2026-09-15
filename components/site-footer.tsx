@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="border-t border-charcoal/10 bg-ivory">
       <div className="mx-auto flex w-full max-w-[1520px] flex-col gap-8 px-4 py-10 sm:px-8 sm:py-12 lg:flex-row lg:items-end lg:justify-between xl:px-12">
         <div>
-          <LouisLogo imageClassName="h-7 w-auto" />
+          <LouisLogo size="footer" />
           <p className="mt-4 max-w-[320px] text-[14px] leading-5 tracking-[-0.01em] text-charcoal/70">
             The secure workspace where leading firms run matters, review
             documents, and produce work they can stand behind.

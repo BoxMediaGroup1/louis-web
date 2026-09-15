@@ -9,7 +9,7 @@ export default function RequestADemoPage() {
   return (
     <main className="flex-1 bg-ivory">
       <section className="mx-auto w-full max-w-[720px] px-4 py-24 sm:px-8">
-        <LouisLogo imageClassName="h-7 w-auto" />
+        <LouisLogo size="footer" />
         <h1 className="mt-8 text-[40px] font-medium leading-[1.05] tracking-[-0.04em] text-charcoal sm:text-[52px]">
           Request a demo
         </h1>
