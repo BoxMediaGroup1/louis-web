@@ -1,7 +1,7 @@
 import { Instrument_Serif } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { HeroHeadline } from "@/components/hero-headline";
+import { HeroProductImage } from "@/components/hero-product-image";
 import { ArrowRightIcon } from "@/components/product-demo/icons";
 import { ProductInnovationSection } from "@/components/product-innovation-section";
 
@@ -39,16 +39,7 @@ export default function Home() {
           </div>
 
           <div className="mt-16 w-full sm:mt-20">
-            <Image
-              src="/hero-product.png"
-              alt="Louis workspace showing the Project Meridian matter"
-              width={8000}
-              height={4500}
-              sizes="(max-width: 1520px) 100vw, 1520px"
-              preload
-              unoptimized
-              className="block h-auto w-full rounded-[6px]"
-            />
+            <HeroProductImage />
           </div>
         </div>
       </section>

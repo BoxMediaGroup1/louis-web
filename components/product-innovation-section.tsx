@@ -19,21 +19,21 @@ const products: Product[] = [
     title: "Ask Louis",
     description:
       "Work with Louis across documents, matters and firm knowledge through one secure legal AI workspace.",
-    image: "/hero-product.png",
+    image: "/hero-product.webp",
   },
   {
     id: "client-matters",
     title: "Client Matters",
     description:
       "Bring everything related to a client matter into one organised workspace for documents, tasks, research, collaboration and AI.",
-    image: "/hero-product.png",
+    image: "/hero-product.webp",
   },
   {
     id: "spaces",
     title: "Spaces",
     description:
       "Create governed workspaces for teams, clients and co-counsel, with permissions designed around sensitive legal work.",
-    image: "/product-spaces.png",
+    image: "/product-spaces.webp",
     imageFit: "object-contain",
   },
   {
@@ -41,21 +41,21 @@ const products: Product[] = [
     title: "Vaults",
     description:
       "Organise trusted documents and knowledge into reusable collections that Louis can securely work across.",
-    image: "/hero-product.png",
+    image: "/hero-product.webp",
   },
   {
     id: "agents",
     title: "Agents",
     description:
       "Run complex multi-step legal workflows with specialised AI agents coordinating tasks and producing structured outputs.",
-    image: "/hero-product.png",
+    image: "/hero-product.webp",
   },
   {
     id: "legal-research",
     title: "Legal Research",
     description:
       "Research legal questions using AI-assisted search, source-backed answers and citations within the Louis workspace.",
-    image: "/hero-product.png",
+    image: "/hero-product.webp",
   },
 ];
 
@@ -250,9 +250,10 @@ function ProductImage({
       <Image
         src={product.image}
         alt={`${product.title} in the Louis workspace`}
-        width={8000}
-        height={4500}
+        width={2560}
+        height={1440}
         sizes="(max-width: 1023px) calc(100vw - 32px), (max-width: 1279px) 52vw, 760px"
+        loading="lazy"
         unoptimized
         className={`h-full w-full ${product.imageFit ?? "object-cover"}`}
       />
