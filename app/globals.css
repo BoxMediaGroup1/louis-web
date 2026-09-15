@@ -19,6 +19,51 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.hero-caret {
+  display: inline-block;
+  width: 0.045em;
+  height: 0.78em;
+  margin-left: 0.07em;
+  vertical-align: 0.02em;
+  background: currentColor;
+  border-radius: 1px;
+  transform-origin: center;
+}
+
+.hero-caret-idle {
+  animation: hero-caret-idle 3.2s ease-in-out forwards;
+}
+
+@keyframes hero-caret-idle {
+  0%,
+  18% {
+    opacity: 1;
+  }
+  28%,
+  42% {
+    opacity: 0.08;
+  }
+  52%,
+  66% {
+    opacity: 1;
+  }
+  76%,
+  88% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-caret,
+  .hero-caret-idle {
+    animation: none;
+    display: none;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

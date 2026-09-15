@@ -1,6 +1,7 @@
 import { Instrument_Serif } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import { HeroHeadline } from "@/components/hero-headline";
 import { ArrowRightIcon } from "@/components/product-demo/icons";
 import { ProductInnovationSection } from "@/components/product-innovation-section";
 
@@ -16,11 +17,9 @@ export default function Home() {
       <section>
         <div className="mx-auto w-full max-w-[1520px] px-4 pb-16 pt-16 sm:px-8 sm:pt-24 xl:px-12 lg:pt-28">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(340px,0.85fr)] lg:items-end lg:gap-20">
-            <h1
+            <HeroHeadline
               className={`${instrumentSerif.className} max-w-[840px] text-[60px] leading-[0.96] tracking-[-0.04em] text-charcoal sm:text-[80px] lg:text-[96px]`}
-            >
-              The next generation of legal work
-            </h1>
+            />
 
             <div className="max-w-[400px] lg:pb-1">
               <p className="text-[16px] leading-6 tracking-[-0.01em] text-charcoal/80 sm:text-[17px]">
