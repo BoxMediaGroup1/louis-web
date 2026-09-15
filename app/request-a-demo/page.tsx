@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LouisLogo } from "@/components/louis-logo";
 
 export const metadata = {
   title: "Request a demo — Louis",
@@ -8,10 +9,8 @@ export default function RequestADemoPage() {
   return (
     <main className="flex-1 bg-ivory">
       <section className="mx-auto w-full max-w-[720px] px-4 py-24 sm:px-8">
-        <p className="text-[13px] font-medium tracking-[-0.01em] text-burgundy">
-          Louis
-        </p>
-        <h1 className="mt-4 text-[40px] font-medium leading-[1.05] tracking-[-0.04em] text-charcoal sm:text-[52px]">
+        <LouisLogo imageClassName="h-7 w-auto" />
+        <h1 className="mt-8 text-[40px] font-medium leading-[1.05] tracking-[-0.04em] text-charcoal sm:text-[52px]">
           Request a demo
         </h1>
         <p className="mt-6 max-w-[520px] text-[16px] leading-6 text-charcoal/80">
