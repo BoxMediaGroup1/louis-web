@@ -98,12 +98,9 @@ export function SiteHeader() {
             setOpenMenu={setOpenMenu}
             variant="login"
           />
-          <Link
-            href="/request-a-demo"
-            className="inline-flex h-9 items-center rounded-lg bg-charcoal px-3.5 text-[13px] font-medium text-white transition-colors hover:bg-charcoal/90"
-          >
-            Request a Demo
-          </Link>
+          <p className="inline-flex h-9 items-center rounded-lg bg-charcoal px-3.5 text-[13px] font-medium text-white">
+            Launching October 2026
+          </p>
         </div>
 
         <button
@@ -142,13 +139,9 @@ export function SiteHeader() {
             >
               Login
             </Link>
-            <Link
-              href="/request-a-demo"
-              onClick={() => setIsOpen(false)}
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-charcoal text-[14px] font-medium text-white"
-            >
-              Request a Demo
-            </Link>
+            <p className="inline-flex h-11 items-center justify-center rounded-lg bg-charcoal text-[14px] font-medium text-white">
+              Launching October 2026
+            </p>
           </div>
         </nav>
       ) : null}

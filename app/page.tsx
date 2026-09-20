@@ -1,9 +1,6 @@
 import { Instrument_Serif } from "next/font/google";
-import Link from "next/link";
 import { HeroHeadline } from "@/components/hero-headline";
 import { HeroProductImage } from "@/components/hero-product-image";
-import { ArrowRightIcon } from "@/components/product-demo/icons";
-import { ProductInnovationSection } from "@/components/product-innovation-section";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -27,13 +24,9 @@ export default function Home() {
                 review documents, and produce work they can stand behind.
               </p>
               <div className="mt-7">
-              <Link
-                href="/request-a-demo"
-                className="inline-flex h-11 items-center gap-2 rounded-[4px] bg-burgundy-deep px-5 text-[14px] font-medium text-white transition-colors duration-200 hover:bg-burgundy"
-              >
-                Request a demo
-                <ArrowRightIcon className="size-3.5" />
-              </Link>
+                <p className="inline-flex h-11 items-center rounded-[4px] bg-burgundy-deep px-5 text-[14px] font-medium text-white">
+                  Launching October 2026
+                </p>
               </div>
             </div>
           </div>
@@ -43,7 +36,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <ProductInnovationSection />
     </main>
   );
 }

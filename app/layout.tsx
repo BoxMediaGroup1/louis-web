@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { SiteFooter } from "@/components/site-footer";
+import { ConditionalFooter } from "@/components/conditional-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex min-h-screen flex-col antialiased`}>
         <SiteHeader />
         {children}
-        <SiteFooter />
+        <ConditionalFooter />
       </body>
     </html>
   );
