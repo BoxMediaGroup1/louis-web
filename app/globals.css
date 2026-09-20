@@ -28,21 +28,19 @@ body {
 .hero-type-char::after {
   content: "";
   position: absolute;
-  top: 0.08em;
-  left: calc(100% + 0.12em);
-  width: 0.03em;
-  height: 0.72em;
+  top: 0.14em;
+  right: -0.07em;
+  width: 0.045em;
+  height: 0.78em;
   background: currentColor;
-  border-radius: 999px;
+  border-radius: 1px;
   opacity: 0;
-  pointer-events: none;
-  animation: hero-caret-step 150ms ease-in-out;
+  animation: hero-caret-step 110ms linear;
   animation-delay: inherit;
 }
 
 .hero-type-char-last::after {
-  opacity: 0;
-  animation: hero-caret-blink 0.85s ease-in-out infinite;
+  animation: hero-caret-idle 3.2s ease-in-out forwards;
   animation-delay: inherit;
 }
 
@@ -54,7 +52,7 @@ body {
 
 @keyframes hero-caret-step {
   0%,
-  70% {
+  85% {
     opacity: 1;
   }
   100% {
@@ -62,12 +60,23 @@ body {
   }
 }
 
-@keyframes hero-caret-blink {
+@keyframes hero-caret-idle {
   0%,
-  42% {
+  18% {
     opacity: 1;
   }
-  58%,
+  28%,
+  42% {
+    opacity: 0.08;
+  }
+  52%,
+  66% {
+    opacity: 1;
+  }
+  76%,
+  88% {
+    opacity: 0.08;
+  }
   100% {
     opacity: 0;
   }
