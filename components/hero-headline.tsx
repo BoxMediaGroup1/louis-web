@@ -1,4 +1,5 @@
 const TEXT = "The next generation of legal work";
+const ACCENT = "work";
 const CHAR_MS = 56;
 const SPACE_MS = 90;
 
@@ -16,16 +17,18 @@ function characterDelays(text: string) {
 
 export function HeroHeadline({ className }: { className?: string }) {
   const delays = characterDelays(TEXT);
+  const accentStart = TEXT.lastIndexOf(ACCENT);
 
   return (
     <h1 className={className} aria-label={TEXT}>
       {TEXT.split("").map((char, index) => {
         const isLast = index === TEXT.length - 1;
+        const isAccent = index >= accentStart;
 
         return (
           <span
             key={`${char}-${index}`}
-            className={`hero-type-char${isLast ? " hero-type-char-last" : ""}`}
+            className={`hero-type-char${isLast ? " hero-type-char-last" : ""}${isAccent ? " text-burgundy-deep" : ""}`}
             style={{ animationDelay: `${delays[index]}ms` }}
             aria-hidden="true"
           >
