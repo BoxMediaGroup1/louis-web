@@ -21,8 +21,8 @@ body {
 
 .hero-type-char {
   position: relative;
-  visibility: hidden;
-  animation: hero-type-show 1ms linear forwards;
+  opacity: 0;
+  animation: hero-type-show 140ms ease-out forwards;
 }
 
 .hero-type-char::after {
@@ -35,7 +35,7 @@ body {
   background: currentColor;
   border-radius: 1px;
   opacity: 0;
-  animation: hero-caret-step 110ms linear;
+  animation: hero-caret-step 180ms ease-in-out;
   animation-delay: inherit;
 }
 
@@ -45,14 +45,20 @@ body {
 }
 
 @keyframes hero-type-show {
+  from {
+    opacity: 0;
+  }
   to {
-    visibility: visible;
+    opacity: 1;
   }
 }
 
 @keyframes hero-caret-step {
-  0%,
-  85% {
+  0% {
+    opacity: 0;
+  }
+  18%,
+  62% {
     opacity: 1;
   }
   100% {
@@ -85,7 +91,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-type-char,
   .hero-type-char-last {
-    visibility: visible;
+    opacity: 1;
     animation: none;
   }
 
