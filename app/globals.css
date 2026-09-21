@@ -28,10 +28,10 @@ body {
 .hero-type-char::after {
   content: "";
   position: absolute;
-  top: 0.14em;
+  top: 0.28em;
   right: -0.07em;
   width: 0.045em;
-  height: 0.78em;
+  height: 0.68em;
   background: currentColor;
   border-radius: 1px;
   opacity: 0;
