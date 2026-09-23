@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { LouisLogo } from "@/components/louis-logo";
 import {
@@ -132,13 +131,13 @@ export function SiteHeader() {
             />
           ))}
           <div className="mt-4 flex flex-col gap-2 pb-4">
-            <Link
-              href="/login"
+            <button
+              type="button"
               onClick={() => setIsOpen(false)}
               className="inline-flex h-11 items-center justify-center rounded-lg border border-charcoal/20 text-[14px] font-medium text-charcoal"
             >
               Login
-            </Link>
+            </button>
             <p className="inline-flex h-11 items-center justify-center rounded-lg bg-charcoal text-[14px] font-medium text-white">
               Launching October 2026
             </p>
@@ -166,12 +165,12 @@ function DesktopNavItem({
 
   if (!hasChildren && item.href) {
     return (
-      <Link
-        href={item.href}
+      <button
+        type="button"
         className="rounded-md px-2.5 py-2 text-[13px] tracking-[-0.01em] text-charcoal transition-colors hover:text-charcoal/70 xl:px-3 xl:text-[14px]"
       >
         {item.label}
-      </Link>
+      </button>
     );
   }
 
@@ -214,14 +213,14 @@ function DesktopNavItem({
         >
           <div className="rounded-xl border border-charcoal/10 bg-ivory py-2 shadow-[0_12px_40px_rgba(28,25,23,0.08)]">
             {item.children.map((child) => (
-              <Link
+              <button
                 key={child.href + child.label}
-                href={child.href}
-                className="block px-4 py-2 text-[13px] text-charcoal hover:bg-charcoal/5"
+                type="button"
+                className="block w-full px-4 py-2 text-left text-[13px] text-charcoal hover:bg-charcoal/5"
                 onClick={() => setOpenMenu(null)}
               >
                 {child.label}
-              </Link>
+              </button>
             ))}
           </div>
         </div>
@@ -241,13 +240,13 @@ function MobileNavItem({
 
   if (!item.children?.length && item.href) {
     return (
-      <Link
-        href={item.href}
+      <button
+        type="button"
         onClick={onNavigate}
-        className="block py-3 text-[16px] tracking-[-0.01em] text-charcoal"
+        className="block w-full py-3 text-left text-[16px] tracking-[-0.01em] text-charcoal"
       >
         {item.label}
-      </Link>
+      </button>
     );
   }
 
@@ -267,23 +266,23 @@ function MobileNavItem({
       {open ? (
         <div className="pb-3 pl-3">
           {item.href ? (
-            <Link
-              href={item.href}
+            <button
+              type="button"
               onClick={onNavigate}
-              className="block py-2 text-[15px] text-charcoal/80"
+              className="block w-full py-2 text-left text-[15px] text-charcoal/80"
             >
               Overview
-            </Link>
+            </button>
           ) : null}
           {item.children?.map((child) => (
-            <Link
+            <button
               key={child.href + child.label}
-              href={child.href}
+              type="button"
               onClick={onNavigate}
-              className="block py-2 text-[15px] text-charcoal/80"
+              className="block w-full py-2 text-left text-[15px] text-charcoal/80"
             >
               {child.label}
-            </Link>
+            </button>
           ))}
         </div>
       ) : null}
