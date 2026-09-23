@@ -22,7 +22,7 @@ body {
 .hero-type-char {
   position: relative;
   opacity: 0;
-  animation: hero-type-show 140ms ease-out forwards;
+  animation: hero-type-show 180ms ease-out forwards;
 }
 
 .hero-type-char::after {
@@ -35,7 +35,7 @@ body {
   background: currentColor;
   border-radius: 1px;
   opacity: 0;
-  animation: hero-caret-step 180ms ease-in-out;
+  animation: hero-caret-step 280ms ease-in-out;
   animation-delay: inherit;
 }
 
