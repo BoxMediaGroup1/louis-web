@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Louis — Intelligent legal workspace",
+  title: "Louis - Intelligent legal workspace",
   description:
     "Louis is the secure workspace where leading firms run matters, review documents, and produce work they can stand behind.",
 };
