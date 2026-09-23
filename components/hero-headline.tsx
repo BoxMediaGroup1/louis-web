@@ -20,7 +20,7 @@ export function HeroHeadline({ className }: { className?: string }) {
   const accentStart = TEXT.lastIndexOf(ACCENT);
 
   return (
-    <h1 className={className} aria-label={TEXT}>
+    <h1 className={`min-w-0 max-w-full ${className ?? ""}`} aria-label={TEXT}>
       {TEXT.split("").map((char, index) => {
         const isLast = index === TEXT.length - 1;
         const isAccent = index >= accentStart;
@@ -29,7 +29,7 @@ export function HeroHeadline({ className }: { className?: string }) {
         return (
           <span
             key={`${char}-${index}`}
-            className={`hero-type-slot${isLast ? " hero-type-slot-last" : ""}${isAccent ? " text-burgundy-deep" : ""}`}
+            className={`hero-type-slot${char === " " ? " hero-type-space" : ""}${isLast ? " hero-type-slot-last" : ""}${isAccent ? " text-burgundy-deep" : ""}`}
             style={{
               animationDelay: `${delays[index]}ms`,
               ["--caret-ms" as string]: `${step}ms`,

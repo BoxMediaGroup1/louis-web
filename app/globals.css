@@ -21,7 +21,10 @@ body {
 
 .hero-type-slot {
   position: relative;
-  white-space: pre;
+}
+
+.hero-type-space {
+  white-space: pre-wrap;
 }
 
 .hero-type-char {
