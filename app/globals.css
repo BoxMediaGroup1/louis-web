@@ -19,27 +19,32 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.hero-type-char {
+.hero-type-slot {
   position: relative;
-  opacity: 0;
-  animation: hero-type-show 180ms ease-out forwards;
+  white-space: pre;
 }
 
-.hero-type-char::after {
-  content: "";
+.hero-type-char {
+  opacity: 0;
+  animation: hero-type-show 180ms ease-out forwards;
+  animation-delay: inherit;
+}
+
+.hero-caret {
   position: absolute;
   top: 0.28em;
-  right: -0.07em;
-  width: 0.045em;
+  left: calc(100% + 0.05em);
+  width: 0.04em;
   height: 0.68em;
   background: currentColor;
   border-radius: 1px;
   opacity: 0;
-  animation: hero-caret-step 280ms ease-in-out;
+  pointer-events: none;
+  animation: hero-caret-step var(--caret-ms) linear forwards;
   animation-delay: inherit;
 }
 
-.hero-type-char-last::after {
+.hero-type-slot-last .hero-caret {
   animation: hero-caret-idle 3.2s ease-in-out forwards;
   animation-delay: inherit;
 }
@@ -54,11 +59,8 @@ body {
 }
 
 @keyframes hero-caret-step {
-  0% {
-    opacity: 0;
-  }
-  18%,
-  62% {
+  0%,
+  99% {
     opacity: 1;
   }
   100% {
@@ -95,8 +97,7 @@ body {
     animation: none;
   }
 
-  .hero-type-char::after,
-  .hero-type-char-last::after {
+  .hero-caret {
     display: none;
     animation: none;
   }

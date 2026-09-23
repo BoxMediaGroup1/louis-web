@@ -24,15 +24,20 @@ export function HeroHeadline({ className }: { className?: string }) {
       {TEXT.split("").map((char, index) => {
         const isLast = index === TEXT.length - 1;
         const isAccent = index >= accentStart;
+        const step = isLast ? 0 : delays[index + 1] - delays[index];
 
         return (
           <span
             key={`${char}-${index}`}
-            className={`hero-type-char${isLast ? " hero-type-char-last" : ""}${isAccent ? " text-burgundy-deep" : ""}`}
-            style={{ animationDelay: `${delays[index]}ms` }}
+            className={`hero-type-slot${isLast ? " hero-type-slot-last" : ""}${isAccent ? " text-burgundy-deep" : ""}`}
+            style={{
+              animationDelay: `${delays[index]}ms`,
+              ["--caret-ms" as string]: `${step}ms`,
+            }}
             aria-hidden="true"
           >
-            {char}
+            <span className="hero-type-char">{char}</span>
+            <span className="hero-caret" />
           </span>
         );
       })}
