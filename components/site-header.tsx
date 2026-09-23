@@ -97,7 +97,7 @@ export function SiteHeader() {
             setOpenMenu={setOpenMenu}
             variant="login"
           />
-          <p className="inline-flex h-9 items-center rounded-lg bg-charcoal px-3.5 text-[13px] font-medium text-white">
+          <p className="inline-flex h-9 items-center rounded-lg bg-burgundy-deep px-3.5 text-[13px] font-medium text-white">
             Launching October 2026
           </p>
         </div>
@@ -138,7 +138,7 @@ export function SiteHeader() {
             >
               Login
             </button>
-            <p className="inline-flex h-11 items-center justify-center rounded-lg bg-charcoal text-[14px] font-medium text-white">
+            <p className="inline-flex h-11 items-center justify-center rounded-lg bg-burgundy-deep text-[14px] font-medium text-white">
               Launching October 2026
             </p>
           </div>
